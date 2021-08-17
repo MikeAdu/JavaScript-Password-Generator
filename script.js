@@ -19,7 +19,7 @@ function generatePassword() {
   var hasSpecialCharacters = window.confirm("Will the password have special characters?");
   var hasNumbers = window.confirm("Will the password have numbers?");
   for (i = 0; i < passwordLength; i++) {
-    finalPassword.push(successfulPassword[Math.floor(Math.random() * successfulPassword.length)]);
+    finalPassword.concat(successfulPassword[Math.floor(Math.random() * successfulPassword.length)]);
     if (hasSpecialCharacters === true) {
       successfulPassword.concat(specialChars)
 

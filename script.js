@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
-var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var numbers = ["0123456789"];
-var specialChars = ["!@#$%^&*()_=+"];
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var specialChars = "!@#$%^&*()_=+";
 
 function generatePassword() {
   var successfulPassword = [];
@@ -36,7 +36,9 @@ function generatePassword() {
     }
 
   }
+  console.log(finalPassword)
   return finalPassword;
+  
 }
 
 

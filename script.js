@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "0123456789";
-var specialChars = "!@#$%^&*()_=+";
+var lowerCase = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",");
+var upperCase = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(",");
+var numbers = "0,1,2,3,4,5,6,7,8,9".split(",");
+var specialChars = "!,@,#,$,%,^,&,*,(,),_,=,+,".split(",");
 
 function generatePassword() {
   var successfulPassword = [];
@@ -18,25 +18,29 @@ function generatePassword() {
   var isLowerCase = window.confirm("Will there be lower case letters in the password?");
   var hasSpecialCharacters = window.confirm("Will the password have special characters?");
   var hasNumbers = window.confirm("Will the password have numbers?");
-  for (i = 0; i < passwordLength; i++) {
-    finalPassword.concat(successfulPassword[Math.floor(Math.random() * successfulPassword.length)]);
-    if (hasSpecialCharacters === true) {
-      successfulPassword.concat(specialChars)
-
-    }
-    if (isLowerCase === true) {
-      successfulPassword.concat(lowerCase)
-    }
-    if (isUpperCase === true) {
-      successfulPassword.concat(upperCase)
-
-    }
-    if (hasNumbers === true) {
-      successfulPassword.concat(numbers)
-    }
+  if (hasSpecialCharacters === true) {
+    successfulPassword=successfulPassword.concat(specialChars)
 
   }
-  console.log(finalPassword)
+  if (isLowerCase === true) {
+    successfulPassword=successfulPassword.concat(lowerCase)
+  }
+  if (isUpperCase === true) {
+    successfulPassword=successfulPassword.concat(upperCase)
+
+  }
+  if (hasNumbers === true) {
+    successfulPassword=successfulPassword.concat(numbers)
+  }
+  console.log(successfulPassword)
+  for (i = 0; i < passwordLength; i++) {
+    finalPassword=finalPassword + (successfulPassword[Math.floor(Math.random() * successfulPassword.length)]);
+    console.log(finalPassword)
+
+  }
+
+
+  
   return finalPassword;
   
 }
